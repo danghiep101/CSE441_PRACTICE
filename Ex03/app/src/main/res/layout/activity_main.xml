@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btn_devide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="Thương"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_mutiply"
+        app:layout_constraintStart_toEndOf="@+id/btn_mutiply"
+        app:layout_constraintTop_toTopOf="@+id/btn_mutiply" />
+
+    <Button
+        android:id="@+id/btn_mutiply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="Tích"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_subtract"
+        app:layout_constraintStart_toEndOf="@+id/btn_subtract"
+        app:layout_constraintTop_toTopOf="@+id/btn_subtract" />
+
+    <EditText
+        android:id="@+id/edt_A"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="128dp"
+        android:layout_marginEnd="20dp"
+        android:ems="10"
+        android:hint="Nhap A"
+        android:inputType="number"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.437"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edt_B"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:hint="Nhap B"
+        android:inputType="number"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/edt_A"
+        app:layout_constraintStart_toStartOf="@+id/edt_A"
+        app:layout_constraintTop_toBottomOf="@+id/edt_A" />
+
+    <EditText
+        android:id="@+id/edt_result"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:hint="Ket qua"
+        android:inputType="text"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/edt_B"
+        app:layout_constraintStart_toStartOf="@+id/edt_B"
+        app:layout_constraintTop_toBottomOf="@+id/edt_B" />
+
+    <Button
+        android:id="@+id/btn_caculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:text="Tổng"
+        app:layout_constraintEnd_toEndOf="@+id/edt_result"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/edt_result"
+        app:layout_constraintTop_toBottomOf="@+id/edt_result" />
+
+    <Button
+        android:id="@+id/btn_subtract"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="Hiệu"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_caculate"
+        app:layout_constraintStart_toEndOf="@+id/btn_caculate"
+        app:layout_constraintTop_toTopOf="@+id/btn_caculate"
+        app:layout_constraintVertical_bias="1.0" />
+</androidx.constraintlayout.widget.ConstraintLayout>
