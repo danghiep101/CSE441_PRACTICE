@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         btnMuiply = findViewById(R.id.btn_mutiply);
     }
 
-    @Override
+
     public void onClick(View view) {
 
         int A = Integer.parseInt("0" + editTextA.getText().toString());
