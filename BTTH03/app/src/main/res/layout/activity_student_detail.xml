@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:textAlignment="center"
-    tools:context=".ui.StudentDetailActivity">
+    tools:context=".ui.studentdetail.StudentDetailActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"

@@ -1,4 +1,4 @@
-package com.example.btth03.ui;
+package com.example.btth03.ui.StudentList;
 
 import android.content.Context;
 
