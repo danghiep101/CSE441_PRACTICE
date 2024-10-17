@@ -1,10 +1,14 @@
 package com.example.ex13;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.ListView;
 import android.widget.MultiAutoCompleteTextView;
 import android.widget.TextView;
 
@@ -14,48 +18,32 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
-    TextView selection;
-    // Khai báo 2 CompleteTextView
-    AutoCompleteTextView singleComplete;
-    MultiAutoCompleteTextView multiComplete;
-    // Khởi tạo mảng tên địa danh
-    String arr[] = {"hà nội", "huế", "sài gòn",
-            "hà giang", "nghệ an", "kiên giang",
-            "lâm đồng", "long khánh"};
-
+    String namephone[] ={"Điện thoại Iphone 12", "Điện thoại SamSung S20","Điện thoại Nokia 6","Điện thoại Bphone 2020","Điện thoại Oppo 5","Điện thoại VSmart joy2"};
+    int imagephone[] = {R.drawable.mexico,R.drawable.nigeria,R.drawable.russia,R.drawable.united_states, R.drawable.vietnam,R.drawable.pakistan};
+    ArrayList<phone> mylist;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        selection = (TextView) findViewById(R.id.selection);
-        singleComplete = (AutoCompleteTextView) findViewById(R.id.editauto);
-        ArrayAdapter<String> myadapter = new ArrayAdapter<String>(
-                this,
-                android.R.layout.simple_list_item_1,
-                arr
-        );
-        singleComplete.setAdapter(myadapter);
+    protected void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState); setContentView(R.layout.activity_main);
+        ListView lv = findViewById(R.id.lv);
+        mylist = new ArrayList<>();
+        for (int i = 0; i <namephone.length;i++)
+        {
 
-        multiComplete = (MultiAutoCompleteTextView) findViewById(R.id.multiAutoCompleteTextView1);
-        multiComplete.setAdapter(new ArrayAdapter<String>(
-                this,
-                android.R.layout.simple_list_item_1,
-                arr
-        ));
-        multiComplete.setTokenizer(new MultiAutoCompleteTextView.CommaTokenizer());
+            mylist.add(new phone(namephone[i],imagephone[i]));
+        }
+        ArrayAdapter<String> myadapter;
+            myadapter  =  new  MyArrayAdapter(this,R.layout.layout_listview,mylist);
+            lv.setAdapter(myadapter);
+            lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                    Intent myintent = new Intent(MainActivity.this, SubActivity.class); myintent.putExtra("name",namephone[i]);
+                    startActivity(myintent);
+                }
 
-        singleComplete.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-            }
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                selection.setText(singleComplete.getText());
-            }
-            @Override
-            public void afterTextChanged(Editable editable) {
-            }
         });
     }
 }
+
