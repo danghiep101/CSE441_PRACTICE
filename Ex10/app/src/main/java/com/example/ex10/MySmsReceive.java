@@ -3,6 +3,8 @@ package com.example.ex10;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.telephony.SmsMessage;
+import android.widget.Toast;
 
 public class MySmsReceive extends BroadcastReceiver {
     @Override
@@ -20,7 +22,7 @@ public void onReceive(Context context, Intent intent) { processReceive(context,i
                 message +="Có 1 tin nhắn từ "+address+"\n"+body+" vừa gởi đến";
 
             }
-//Hiển thị
+
             Toast.makeText(context,message,Toast.LENGTH_LONG).show();
         }
     }
