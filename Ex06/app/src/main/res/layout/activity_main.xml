@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thông tin cá nhân"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:paddingBottom="16dp"
+        android:textColor="#000000" />
+
+
+    <EditText
+        android:id="@+id/input_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Họ tên:"
+        android:inputType="textPersonName"
+        android:textColor="#000000"
+        android:background="#EEEEEE" />
+
+    <EditText
+        android:id="@+id/input_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="CMND:"
+        android:inputType="number"
+        android:maxLength="9"
+        android:textColor="#000000"
+        android:background="#EEEEEE" />
+
+
+    <RadioGroup
+        android:id="@+id/radio_education"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radio_trungcap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trung cấp"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/radio_caodang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cao đẳng" />
+
+        <RadioButton
+            android:id="@+id/radio_daihoc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đại học" />
+    </RadioGroup>
+
+
+    <CheckBox
+        android:id="@+id/checkbox_docbao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đọc báo" />
+
+    <CheckBox
+        android:id="@+id/checkbox_docsach"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đọc sách" />
+
+    <CheckBox
+        android:id="@+id/checkbox_coding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đọc coding" />
+
+
+    <EditText
+        android:id="@+id/input_additional_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Thông tin bổ sung"
+        android:inputType="text"
+        android:textColor="#000000"
+        android:background="#EEEEEE" />
+
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gửi thông tin"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp" />
+</LinearLayout>
